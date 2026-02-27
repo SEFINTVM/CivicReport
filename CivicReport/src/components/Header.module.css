@@ -1,0 +1,96 @@
+/* RESET-ish */
+* {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.Head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* LOGO */
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: -88px;
+}
+
+.Logo h2 {
+  font-size: 1.2rem;
+  color: rgb(3, 3, 204);
+  margin: 0;
+}
+
+.Logo span {
+  font-style: italic;
+  color: rgb(2, 187, 2);
+}
+
+.Logo img {
+  width: 42px;
+  height: auto;
+}
+
+/* LOGIN / REGISTER */
+.LoginReg {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.LoginReg a {
+  text-decoration: none;
+  color: rgb(3, 3, 204);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 🔹 TABLET */
+@media (min-width: 600px) {
+  .Head {
+    padding: 16px 32px;
+  }
+
+  .Logo h2 {
+    font-size: 1.4rem;
+  }
+
+  .Logo img {
+    width: 55px;
+  }
+
+  .LoginReg a {
+    font-size: 1rem;
+  }
+}
+
+/* 🔹 DESKTOP */
+@media (min-width: 992px) {
+  .Head {
+    padding: 20px 50px;
+  }
+
+  .Logo h2 {
+    font-size: 1.6rem;
+  }
+
+  .Logo img {
+    width: 70px;
+  }
+
+  .LoginReg {
+    gap: 20px;
+  }
+}

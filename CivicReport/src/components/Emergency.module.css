@@ -1,0 +1,110 @@
+/* =========================
+   📱 MOBILE FIRST (default)
+   ========================= */
+
+.EmBody {
+  width: 100%;
+  padding: 16px;
+}
+
+.EmBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Emergency Button */
+.EmBtns button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Icons */
+.EmBtns button svg {
+  font-size: 26px;
+}
+
+/* Text Block */
+.EmPolBtnTxt {
+  flex: 1;
+  margin-left: 12px;
+  text-align: left;
+}
+
+.EmPolBtnTxt h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.EmPolBtnTxt p {
+  font-size: 0.8rem;
+  margin: 2px 0 0;
+  opacity: 0.9;
+}
+
+/* 🔴 Police Button */
+.EmBtns button:first-child {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+/* 🟠 Fire Button */
+.EmBtns button:last-child {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+/* =========================
+   🧾 TABLET (≥ 768px)
+   ========================= */
+@media (min-width: 768px) {
+  .EmBody {
+    padding: 24px;
+  }
+
+  .EmBtns {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .EmBtns button {
+    padding: 16px 20px;
+  }
+
+  .EmPolBtnTxt h3 {
+    font-size: 1.1rem;
+  }
+
+  .EmPolBtnTxt p {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   🖥 DESKTOP (≥ 1024px)
+   ========================= */
+@media (min-width: 1024px) {
+  .EmBody {
+    display: flex;
+    justify-content: center;
+  }
+
+  .EmBtns {
+    max-width: 900px;
+  }
+
+  .EmBtns button {
+    padding: 18px 24px;
+    width: 350px;
+  }
+
+  .EmBtns button svg {
+    font-size: 28px;
+  }
+}

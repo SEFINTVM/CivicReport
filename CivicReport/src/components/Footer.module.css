@@ -1,0 +1,68 @@
+/* =========================
+   📱 MOBILE FIRST
+   ========================= */
+
+.FootContainer {
+  width: 100%;
+  padding: 18px 16px;
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.FootContainer p {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Links */
+.FootBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.FootBtns a {
+  text-decoration: none;
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.FootBtns span {
+  color: #999;
+}
+
+/* =========================
+   🧾 TABLET (≥ 768px)
+   ========================= */
+@media (min-width: 768px) {
+  .FootContainer {
+    padding: 22px 24px;
+  }
+
+  .FootContainer p {
+    font-size: 0.9rem;
+  }
+
+  .FootBtns a {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   🖥 DESKTOP (≥ 1024px)
+   ========================= */
+@media (min-width: 1024px) {
+  .FootContainer {
+    padding: 24px 32px;
+  }
+
+  .FootContainer p {
+    max-width: 900px;
+    margin: 0 auto 12px;
+  }
+}
