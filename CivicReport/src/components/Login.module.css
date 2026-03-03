@@ -1,0 +1,213 @@
+/* =========================
+   BASE: MOBILE FIRST
+   ========================= */
+
+.Backdrop {
+  position: fixed;          /* 🔑 THIS IS THE KEY */
+  inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;            /* Above everything */
+}
+
+/* Modal container (glass-lite) */
+.Container {
+  width: 100%;
+  max-width: 100%;
+
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  padding: 20px;
+  position: relative;
+
+  border-radius: 12px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   CLOSE BUTTON – MOBILE FIRST
+   ========================= */
+
+.CloseWindow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 36px;
+  height: 36px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #333;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CloseWindow:active {
+  background: rgba(245, 245, 245, 0.9);
+}
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   INPUTS
+   ========================= */
+
+.FormField input,
+.RegField input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+
+  font-size: 14px;
+  border-radius: 8px;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+
+  outline: none;
+}
+
+.FormField input:focus,
+.RegField input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.15);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+button {
+  width: 100%;
+  padding: 12px;
+  height: 50px;
+
+  font-size: 14px;
+  border-radius: 8px;
+
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+button p{
+  font-size: 14px;
+}
+
+
+/* Allowed colors */
+.BlueBtn {
+  background: #0056b3;
+  color: #fff;
+}
+
+.GreenBtn {
+  background: #1e7e34;
+  color: #fff;
+}
+
+.OrangeBtn {
+  background: #e67e22;
+  color: #fff;
+}
+
+.RedBtn {
+  background: #c0392b;
+  color: #fff;
+}
+
+/* =========================
+   TEXT / LINKS
+   ========================= */
+
+.ActionField,
+.RegAction {
+  text-align: center;
+}
+
+p {
+  font-size: 13px;
+  margin-top: 12px;
+  color: #333;
+}
+
+p span {
+  color: #0056b3;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+p span:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   TABLET (>= 600px)
+   ========================= */
+
+@media (min-width: 600px) {
+  .Container {
+    max-width: 420px;
+    padding: 28px;
+    border-radius: 14px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   DESKTOP (>= 992px)
+   ========================= */
+
+@media (min-width: 992px) {
+  .Container {
+    max-width: 460px;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .CloseWindow:hover {
+    background: rgba(245, 245, 245, 0.95);
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import HeadStyle from './Header.module.css'
 
-function Header() {
+function Header({openLogin}) {
   return (
     <div>
         <div className={HeadStyle.Head}>
@@ -11,7 +11,7 @@ function Header() {
             </div>
 
             <div className={HeadStyle.LoginReg}>
-                <a href="">Login</a>|
+                <a onClick={openLogin}>Login</a>|
                 <a href="">Register</a>
             </div>
         </div>

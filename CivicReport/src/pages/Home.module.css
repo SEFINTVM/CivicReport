@@ -80,5 +80,6 @@
   .Overlay button {
     font-size: 1.1rem;
     padding: 14px 28px;
+    width: 25%;
   }
 }
