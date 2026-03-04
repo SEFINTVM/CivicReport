@@ -21,7 +21,7 @@ function Emergency() {
                 <button>
                     <PiFireTruckFill/>
                     <div className={EmStyle.EmPolBtnTxt}>
-                        <h3>Police Helpline</h3>
+                        <h3>Fire Force Helpline</h3>
                         <p>Call Now</p>
                     </div>
                     <IoCall/>

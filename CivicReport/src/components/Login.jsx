@@ -8,7 +8,7 @@ import 'react-loading-indicators'
 import { Commet } from 'react-loading-indicators'
 
 
-function Login({closeModel}) {
+function Login({closeModel,setLoginOut}) {
   const [isLogin, setIsLogin] = useState(true)
   const [loading,setLoading]=useState(false)
   const [RegForm,setRegForm]=useState({
@@ -18,6 +18,10 @@ function Login({closeModel}) {
     pass:'',
     cpass:''
   })
+  const [LogForm,setLogForm]=useState({
+    email:'',
+    pass:''
+  })
 
   const regFormChange=(e)=>{
       setRegForm(prev=>({...prev,[e.target.name]:e.target.value}))
@@ -25,6 +29,13 @@ function Login({closeModel}) {
       console.log(RegForm);
       
   }
+
+  const LogFormChange=(e)=>{
+      setLogForm(prev=>({...prev,[e.target.name]:e.target.value}))
+      console.log(LogForm);
+  }
+
+
 
   const RegFormSubmit=async(e)=>{
         e.preventDefault();
@@ -35,7 +46,7 @@ function Login({closeModel}) {
             return;
         }
         try{
-            const response=await axios.post('http://localhost:4000/api/register',RegForm)
+            const response=await axios.post('http://localhost:4000/api/register',RegForm,{withCredentials:true})
             console.log(response.data);
            
               toast.success('Data Stored Successfully')
@@ -46,6 +57,31 @@ function Login({closeModel}) {
             toast.error(message)
         }finally{
           setLoading(false)
+        }
+  }
+
+  const LogFormSubmit=async(e)=>{
+        e.preventDefault();
+        setLoading(true);
+
+        if(!LogForm.email || !LogForm.pass){
+            toast.error('The Required fields ar eempty')
+            return
+        }
+
+        try{
+              const res=await axios.post('http://localhost:4000/api/login',LogForm,{withCredentials:true})
+              console.log(res.data);
+              toast.success('Login Success !')
+              setLoginOut(false)
+              closeModel();
+              window.location.reload();
+              
+        }catch(err){
+              console.error(err);
+              const message = err.res?.data?.error ||err.res?.data?.message ||"Something went wrong";
+              toast.error(message)
+              
         }
   }
 
@@ -63,12 +99,12 @@ function Login({closeModel}) {
             <h2>Login</h2>
 
             <div className={LogStyle.FormField}>
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
+              <input type="email" placeholder="Email" name='email' onChange={LogFormChange}/>
+              <input type="password" placeholder="Password" name='pass' onChange={LogFormChange}/>
             </div>
 
             <div className={LogStyle.ActionField}>
-              <button className={LogStyle.BlueBtn}>Login</button>
+              <button className={LogStyle.BlueBtn} onClick={LogFormSubmit}>Login</button>
               <p>
                 Not registered?{' '}
                 <span onClick={() => setIsLogin(false)}>Register</span>
