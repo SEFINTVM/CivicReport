@@ -7,10 +7,13 @@ import Footer from '../components/Footer'
 import Login from '../components/Login'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import ReportFrom from '../components/ReportFrom'
 
 
 function Home() {
+    const [showform,setshowForm]=useState(false)
     const [ShowLogBox,setShowLogBox]=useState(false)
+    const [RepForm,setRepForm]=useState(false)
     const [loginout,setLoginOut]=useState(true)
 
     useEffect(()=>{
@@ -32,7 +35,8 @@ function Home() {
             toast.info('Please login and after use form')
             setShowLogBox(true)
         }else{
-            toast.info('well')
+            // toast.info('well')
+            setRepForm(true)
         }
     }
 
@@ -60,6 +64,8 @@ function Home() {
         <Emergency loginout={loginout}/>
         <HowToWork/>
         <Footer/>
+
+         {RepForm&& <ReportFrom closeModel={()=>setRepForm(!RepForm)}/>}
 
         {ShowLogBox&& <Login closeModel={()=>setShowLogBox(!ShowLogBox)} setLoginOut={setLoginOut}/>}
 

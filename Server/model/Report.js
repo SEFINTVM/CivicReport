@@ -9,8 +9,11 @@ const Report=new mongo.Schema({
     pstation:String,
     problemT:String,
     problemD:String,
-    photo:String
-
+    photo:[String],
+    createdAT:{
+        type:Date,
+        default:Date.now
+    }
 })
 
 module.exports= mongo.model('Report',Report);

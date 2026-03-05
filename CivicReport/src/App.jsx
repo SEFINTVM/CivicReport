@@ -6,6 +6,11 @@ import Home from './pages/Home'
 import 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
 import { Bounce, ToastContainer } from 'react-toastify'
+import AdminPanel from './pages/AdminPanel'
+import AdminComplaints from './components/AdminComplaints'
+import AdminAnalytics from './components/AdminAnalytics'
+import AdminUsers from './components/AdminUsers'
+import AdminDash from './components/AdminDash'
 
 
 
@@ -33,6 +38,13 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home/>}></Route>
+        <Route path='/Admin' element={<AdminPanel/>}>
+              <Route path='complaints' element={<AdminComplaints/>}></Route>
+              <Route path='analytics' element={<AdminAnalytics/>}></Route>
+              <Route path='users' element={<AdminUsers/>}></Route>
+        </Route>
+
+        
         
       </Routes>
       

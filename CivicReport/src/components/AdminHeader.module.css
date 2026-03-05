@@ -1,0 +1,144 @@
+.Head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* LOGO */
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Logo h2 {
+  font-size: 1.2rem;
+  color: rgb(3, 3, 204);
+  margin: 0;
+}
+
+.Logo span {
+  font-style: italic;
+  color: rgb(2, 187, 2);
+}
+
+.Logo img {
+  width: 42px;
+  height: auto;
+}
+
+/* RIGHT INFO */
+.Info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.adminName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.logout {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0d3b66;
+}
+
+.logout:hover {
+  text-decoration: underline;
+}
+
+.bell {
+  font-size: 20px;
+  color: #ffc107;
+  cursor: pointer;
+}
+
+/* ===================== */
+/* MOBILE (max 600px) */
+/* ===================== */
+
+@media (max-width: 600px) {
+
+  .Head {
+    padding: 10px 12px;
+  }
+
+  .Logo h2 {
+    font-size: 1rem;
+  }
+
+  .Logo img {
+    width: 32px;
+  }
+
+  .adminName {
+    display: none;   /* hide admin name on small screens */
+  }
+
+  .logout {
+    font-size: 13px;
+  }
+
+  .bell {
+    font-size: 18px;
+  }
+
+  .Info {
+    gap: 12px;
+  }
+
+}
+
+/* ===================== */
+/* TABLET (601px - 900px) */
+/* ===================== */
+
+@media (max-width: 900px) {
+
+  .Logo h2 {
+    font-size: 1.1rem;
+  }
+
+  .adminName {
+    font-size: 16px;
+  }
+
+  .Info {
+    gap: 16px;
+  }
+
+}
+
+/* ===================== */
+/* DESKTOP (901px+) */
+/* ===================== */
+
+@media (min-width: 901px) {
+
+  .Head {
+    padding: 14px 24px;
+  }
+
+  .Logo h2 {
+    font-size: 1.3rem;
+  }
+
+  .adminName {
+    font-size: 18px;
+  }
+
+}

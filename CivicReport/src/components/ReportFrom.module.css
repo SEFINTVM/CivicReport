@@ -1,0 +1,161 @@
+/* OVERLAY BACKGROUND */
+
+.FormContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+
+    padding: 20px;
+    z-index: 2000;
+}
+
+
+.CloseWindow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 36px;
+  height: 36px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #333;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CloseWindow:active {
+  background: rgba(245, 245, 245, 0.9);
+}
+
+/* FORM BOX */
+
+.FormFields{
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* INPUT SECTIONS */
+
+.DefaultSec,
+.otherInfo,
+.ProblemSec{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* INPUT STYLE */
+
+.FormFields input,
+.FormFields textarea{
+    width: 100%;
+    padding: 10px 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    font-size: 14px;
+}
+
+.FormFields textarea{
+    resize: none;
+    min-height: 70px;
+}
+
+/* BUTTON */
+
+.ButtonSec{
+    text-align: center;
+}
+
+.ButtonSec button{
+    width: 100%;
+    padding: 11px;
+
+    background: #078a00;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.ButtonSec button:hover{
+    background: #145da0;
+}
+
+.ButtonSec p{
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+
+@media (max-width:600px){
+
+    .FormFields{
+        max-width: 100%;
+        padding: 20px;
+    }
+
+}
+
+/* ===================== */
+/* TABLET */
+/* ===================== */
+
+@media (min-width:601px) and (max-width:900px){
+
+    .FormFields{
+        max-width: 500px;
+    }
+
+}
+
+/* ===================== */
+/* DESKTOP */
+/* ===================== */
+
+@media (min-width:901px){
+
+    .FormFields{
+        max-width: 450px;
+    }
+
+}
