@@ -76,6 +76,17 @@ Router.get('/profile', AuthMiddleware, async (req, res) => {
     res.json(user);
 });
 
+Router.get('/users',async(req,res)=>{
+        try{
+            const users=await User.find()
+            res.json(users)
+        }catch(err){
+                console.log(err);
+                res.status(404).json({message:'Server Error'})
+                
+        }
+})
+
 Router.post('/logOut',(req,res)=>{
     res.clearCookie('token')
     res.status(200).json({ message: 'Logged out successfully' });
