@@ -1,0 +1,128 @@
+/* MOBILE FIRST */
+
+.CompContainer{
+    padding:15px;
+    background:#ffffff;
+    margin-top:70px;
+    overflow-x:auto;   /* allows horizontal scroll */
+}
+
+.TableComp{
+    width:100%;
+    min-width:500px; /* prevents table breaking */
+    border-collapse:collapse;
+    background:white;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Header */
+
+.TableComp th{
+    background:#0d6efd;
+    color:white;
+    padding:10px;
+    font-size:13px;
+    text-align:left;
+}
+
+/* Table data */
+
+.TableComp td{
+    padding:10px;
+    border-bottom:1px solid #eee;
+    font-size:13px;
+}
+
+.TableComp tr:hover{
+    background:#f8f9fa;
+}
+
+/* Status */
+
+.status{
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:600;
+}
+
+/* Status Colors */
+
+.Pending{
+    background:#fff3cd;
+    color:#ff9800;
+}
+
+.InProgress{
+    background:#e3f2fd;
+    color:#2196f3;
+}
+
+.Solved{
+    background:#e8f5e9;
+    color:#2e7d32;
+}
+
+
+/* ===================== */
+/* TABLET */
+/* ===================== */
+
+@media (min-width:768px){
+
+    .CompContainer{
+        padding:25px;
+        margin-top:75px;
+    }
+
+    .TableComp th{
+        font-size:14px;
+        padding:12px;
+    }
+
+    .TableComp td{
+        font-size:14px;
+        padding:12px;
+    }
+
+    .status{
+        font-size:12px;
+        padding:6px 12px;
+    }
+
+}
+
+
+/* ===================== */
+/* DESKTOP */
+/* ===================== */
+
+@media (min-width:1024px){
+
+    .CompContainer{
+        padding:30px;
+        margin-top:80px;
+    }
+
+    .TableComp{
+        box-shadow:0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    .TableComp th{
+        font-size:15px;
+        padding:14px;
+    }
+
+    .TableComp td{
+        font-size:14px;
+        padding:14px;
+    }
+
+    .status{
+        font-size:13px;
+        padding:7px 14px;
+    }
+
+}

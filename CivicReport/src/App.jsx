@@ -11,6 +11,7 @@ import AdminComplaints from './components/AdminComplaints'
 import AdminAnalytics from './components/AdminAnalytics'
 import AdminUsers from './components/AdminUsers'
 import AdminDash from './components/AdminDash'
+import Status from './components/Status'
 
 
 
@@ -38,7 +39,9 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home/>}></Route>
+        <Route path='/Status' element={<Status/>}></Route>
         <Route path='/Admin' element={<AdminPanel/>}>
+              <Route index element={<AdminComplaints/>}></Route>
               <Route path='complaints' element={<AdminComplaints/>}></Route>
               <Route path='analytics' element={<AdminAnalytics/>}></Route>
               <Route path='users' element={<AdminUsers/>}></Route>

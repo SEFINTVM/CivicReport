@@ -48,5 +48,18 @@ OPRouter.get('/getComplaint',async(req,res)=>{
     }
 })
 
+OPRouter.get('/IndComplaint',AuthMiddleware,async(req,res)=>{
+        const findUser=await User.findById(req.user.id)
+        if(!findUser){
+            res.status(404).json({message:'Unauthorized Access'})
+        }
+        const getComp=await Report.find({Phone:findUser.phone})
+        if(!getComp.length===0){
+            res.status(404).json({message:'0 Complaints Submitted'})
+        }
+
+        res.status(200).json(getComp)
+})
+
 
 module.exports=OPRouter

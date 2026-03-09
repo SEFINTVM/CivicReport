@@ -1,6 +1,7 @@
 import React from 'react'
 import HeadStyle from './Header.module.css'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function Header({openLogin,loginout,setLoginOut}) {
 
@@ -28,6 +29,8 @@ function Header({openLogin,loginout,setLoginOut}) {
 
             <div className={HeadStyle.LoginReg}>
                 {loginout?<a onClick={openLogin}>Login</a>:<a onClick={handleLoogout}>Log Out</a>}
+                {!loginout&& <Link to='/Status'>Check Status</Link>}
+                {!loginout&& <Link to='/'>Home</Link>}
             </div>
         </div>
     </div>

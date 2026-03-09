@@ -13,7 +13,8 @@ const Report=new mongo.Schema({
     createdAT:{
         type:Date,
         default:Date.now
-    }
+    },
+    status:{type:String,default:'Pending'}
 })
 
 module.exports= mongo.model('Report',Report);
