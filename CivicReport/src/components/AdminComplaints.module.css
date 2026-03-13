@@ -108,6 +108,27 @@ border-radius:6px;
 cursor:pointer;
 }
 
+.btns{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+.btPro{
+    background-color: #0d6efd;
+    border-radius: 20px;
+    border: none;
+    color: white;
+
+}
+.btSol{
+    background-color: #19d200;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    
+}
+
 /* MOBILE */
 
 @media(max-width:768px){

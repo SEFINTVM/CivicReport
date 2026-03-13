@@ -34,6 +34,7 @@ OPRouter.post('/subForm',upload.array('photos',2),async(req,res)=>{
        }
 })
 
+//geting full complaints
 OPRouter.get('/getComplaint',async(req,res)=>{
     try{
             const Comp=await Report.find()
@@ -48,6 +49,7 @@ OPRouter.get('/getComplaint',async(req,res)=>{
     }
 })
 
+//geting individual complaints
 OPRouter.get('/IndComplaint',AuthMiddleware,async(req,res)=>{
         const findUser=await User.findById(req.user.id)
         if(!findUser){
@@ -59,6 +61,34 @@ OPRouter.get('/IndComplaint',AuthMiddleware,async(req,res)=>{
         }
 
         res.status(200).json(getComp)
+})
+
+OPRouter.post('/SetProccess',async(req,res)=>{
+    const id=req.body.id;
+    const FindReport=await Report.findById(id);
+    if(!FindReport){
+        return res.status(404).json({message:'No Report Find'})
+    }
+
+    FindReport.status='InProgress'
+
+    await FindReport.save()
+
+    res.status(200).json({message:'Status Updated'})
+})
+
+OPRouter.post('/SetSolve',async(req,res)=>{
+    const id=req.body.id;
+    const FindReport=await Report.findById(id);
+    if(!FindReport){
+        return res.status(404).json({message:'No Report Find'})
+    }
+
+    FindReport.status='Solved'
+
+    await FindReport.save()
+
+    res.status(200).json({message:'Status Updated'})
 })
 
 

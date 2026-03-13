@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CompStyle from "./AdminComplaints.module.css";
+import { toast } from "react-toastify";
 
 function AdminComplaints() {
 
@@ -19,6 +20,28 @@ function AdminComplaints() {
         fetchReport();
 
     },[])
+
+    const SetProgress=async(id)=>{
+        try{
+                const res=await axios.post("http://localhost:4000/op/SetProccess",{id},{withCredentials:true})
+                toast.success('Status Updated')
+                window.location.reload()
+        }catch(err){
+            console.error(err);
+            
+        }
+    }
+
+    const SetSolve=async(id)=>{
+        try{
+                const res=await axios.post("http://localhost:4000/op/SetSolve",{id},{withCredentials:true})
+                toast.success('Status Updated')
+                window.location.reload()
+        }catch(err){
+            console.error(err);
+            
+        }
+    }
 
 
   return (
@@ -86,6 +109,30 @@ function AdminComplaints() {
                     {selected.photo.map((img,i)=>(
                         <img key={i} src={`http://localhost:4000/uploads/${img}`}alt=""/>
                     ))}
+                </div>
+
+                <div className={CompStyle.btns}>
+
+                    {selected.status === "Pending" && (
+                        <button 
+                            className={CompStyle.btPro} 
+                            onClick={() => SetProgress(selected._id)}>
+                            InProgress
+                        </button>
+                    )}
+
+                    {selected.status === "InProgress" && (
+                        <button 
+                            className={CompStyle.btSol} 
+                            onClick={() => SetSolve(selected._id)}>
+                            Solve
+                        </button>
+                    )}
+
+                    {selected.status === "Solved" && (
+                        <button className={CompStyle.btSol}>Solved</button>
+                    )}
+
                 </div>
             </div>
         </div>
